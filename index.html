@@ -1,121 +1,13 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Cường Hải | Showroom thời trang khách sỉ</title>
-
-<meta name="description" content="Showroom thời trang khách sỉ Cường Hải - Nguồn hàng thời trang nữ, nam và phụ kiện Quảng Châu tại Ninh Hiệp.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:'Be Vietnam Pro',sans-serif;
-background:#f7f3ed;
-color:#1d1d1d;
-overflow-x:hidden;
-}
-
-a{
-text-decoration:none;
-color:inherit;
-}
-
-img{
-width:100%;
-display:block;
-object-fit:cover;
-}
-
-.container{
-width:92%;
-max-width:1320px;
-margin:auto;
-}
-
-/* HEADER */
-
-.header{
-position:sticky;
-top:0;
-z-index:999;
-background:rgba(255,255,255,.92);
-backdrop-filter:blur(16px);
-border-bottom:1px solid rgba(0,0,0,.06);
-}
-
-.nav{
-height:82px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-.logo-wrap{
-display:flex;
-align-items:center;
-gap:14px;
-}
-
-.logo{
-width:56px;
-height:56px;
-border-radius:50%;
-border:1px solid #e7d8c6;
-}
-
-.logo-wrap h2{
-font-size:18px;
-font-weight:800;
-}
-
-.logo-wrap p{
-font-size:13px;
-color:#7b7368;
-}
-
-.menu{
-display:flex;
-gap:38px;
-font-size:14px;
-font-weight:700;
-}
-
-.menu a{
-transition:.25s;
-}
-
-.menu a:hover{
-color:#b78b53;
-}
-
-/* HERO */
+/* ================= HERO PREMIUM ================= */
 
 .hero{
-padding:90px 0 100px;
+padding:100px 0 110px;
 background:
 linear-gradient(
 135deg,
 #f8f5ef 0%,
-#f1ebe1 50%,
-#ebe2d5 100%
+#f2ece2 45%,
+#ebe1d3 100%
 );
 position:relative;
 overflow:hidden;
@@ -127,59 +19,85 @@ position:absolute;
 width:700px;
 height:700px;
 border-radius:50%;
-background:rgba(183,139,83,.08);
-top:-300px;
-right:-200px;
+background:rgba(183,139,83,.07);
+top:-260px;
+right:-220px;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+border-radius:50%;
+background:rgba(255,255,255,.45);
+bottom:-220px;
+left:-120px;
 }
 
 .hero-grid{
 display:grid;
-grid-template-columns:1.05fr .95fr;
-gap:80px;
+grid-template-columns:1.02fr .98fr;
+gap:90px;
 align-items:center;
 position:relative;
 z-index:2;
 }
 
+/* TAG */
+
 .hero-tag{
 display:inline-flex;
-padding:12px 20px;
+padding:12px 22px;
 border-radius:999px;
-background:#efe4d3;
-color:#a67843;
+background:#efe3d2;
+color:#ab7d47;
 font-size:13px;
 font-weight:800;
-letter-spacing:.5px;
-margin-bottom:30px;
+letter-spacing:.6px;
+margin-bottom:34px;
 }
 
-.hero-left h1{
+/* TITLE */
+
+.hero-title{
 font-family:'Cormorant Garamond',serif;
-font-size:110px;
-line-height:.9;
+font-size:118px;
+line-height:.88;
 font-weight:700;
-letter-spacing:-3px;
-margin-bottom:30px;
+letter-spacing:-4px;
 color:#111;
+margin-bottom:26px;
+display:flex;
+flex-direction:column;
 }
 
-.hero-left h1 span{
-color:#b78b53;
+.hero-title span{
+font-size:58px;
 font-style:italic;
+font-weight:600;
+color:#bc8a4f;
+margin-top:12px;
+letter-spacing:0;
 }
 
-.hero-desc{
-font-size:20px;
-line-height:1.9;
-color:#5d564d;
-max-width:700px;
-margin-bottom:40px;
+/* SUBTITLE */
+
+.hero-subtitle{
+font-size:21px;
+line-height:1.95;
+color:#5e564d;
+max-width:720px;
+margin-bottom:44px;
+font-weight:400;
 }
+
+/* BUTTONS */
 
 .hero-actions{
 display:flex;
 gap:18px;
-margin-bottom:42px;
+margin-bottom:46px;
 flex-wrap:wrap;
 }
 
@@ -194,11 +112,12 @@ display:flex;
 align-items:center;
 justify-content:center;
 transition:.3s;
+box-shadow:0 10px 26px rgba(0,0,0,.12);
 }
 
 .btn-dark:hover{
-transform:translateY(-3px);
-background:#b78b53;
+transform:translateY(-4px);
+background:#bc8a4f;
 }
 
 .btn-light{
@@ -206,12 +125,12 @@ height:58px;
 padding:0 34px;
 border-radius:999px;
 border:1.5px solid #111;
+background:rgba(255,255,255,.55);
 color:#111;
 font-weight:800;
 display:flex;
 align-items:center;
 justify-content:center;
-background:rgba(255,255,255,.5);
 transition:.3s;
 }
 
@@ -220,6 +139,8 @@ background:#111;
 color:white;
 }
 
+/* INFO CARDS */
+
 .hero-info{
 display:grid;
 grid-template-columns:repeat(3,1fr);
@@ -227,11 +148,12 @@ gap:18px;
 }
 
 .hero-info-card{
-padding:22px;
-border-radius:24px;
-background:rgba(255,255,255,.7);
-backdrop-filter:blur(10px);
-border:1px solid rgba(183,139,83,.18);
+padding:24px;
+border-radius:26px;
+background:rgba(255,255,255,.72);
+backdrop-filter:blur(12px);
+border:1px solid rgba(183,139,83,.16);
+box-shadow:0 10px 26px rgba(0,0,0,.04);
 }
 
 .hero-info-card strong{
@@ -242,25 +164,27 @@ margin-bottom:8px;
 
 .hero-info-card span{
 font-size:14px;
-line-height:1.6;
+line-height:1.7;
 color:#6b645c;
 }
 
+/* RIGHT IMAGE */
+
 .hero-right{
 position:relative;
-min-height:760px;
+min-height:780px;
 }
 
 .main-store-image{
 position:absolute;
 right:0;
 top:0;
-width:78%;
-height:760px;
+width:80%;
+height:780px;
 overflow:hidden;
-border-radius:42px;
+border-radius:44px;
 box-shadow:
-0 30px 80px rgba(0,0,0,.16);
+0 35px 90px rgba(0,0,0,.17);
 }
 
 .main-store-image img{
@@ -269,270 +193,72 @@ height:100%;
 object-fit:cover;
 }
 
+/* LOGO FLOAT */
+
 .floating-logo{
 position:absolute;
-right:10px;
-bottom:20px;
+right:16px;
+bottom:26px;
 width:180px;
 padding:18px;
-background:white;
-border-radius:30px;
+background:rgba(255,255,255,.96);
+border-radius:32px;
 box-shadow:
-0 20px 45px rgba(0,0,0,.15);
+0 22px 50px rgba(0,0,0,.15);
 }
 
-.floating-slogan{
+.floating-logo img{
+border-radius:20px;
+}
+
+/* SLOGAN TEXT */
+
+.floating-slogan-text{
 position:absolute;
-left:0;
+left:-20px;
 bottom:120px;
-width:320px;
-overflow:hidden;
-border-radius:28px;
-border:10px solid rgba(255,255,255,.92);
-box-shadow:
-0 24px 60px rgba(0,0,0,.18);
-}
-
-.floating-slogan img{
-height:220px;
-object-fit:cover;
-}
-
-/* CATEGORY */
-
-.category-section{
-padding:110px 0;
-}
-
-.section-label{
-font-size:13px;
-font-weight:900;
-letter-spacing:2px;
-color:#b78b53;
-margin-bottom:18px;
-}
-
-.section-title{
-font-family:'Cormorant Garamond',serif;
-font-size:72px;
-line-height:1;
-margin-bottom:20px;
-}
-
-.section-desc{
-font-size:18px;
-line-height:1.9;
-color:#61584f;
-max-width:760px;
-margin-bottom:50px;
-}
-
-.category-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:28px;
-}
-
-.category-card{
-position:relative;
-overflow:hidden;
+padding:34px 38px;
+background:rgba(255,255,255,.92);
 border-radius:34px;
-min-height:620px;
-box-shadow:0 24px 56px rgba(0,0,0,.1);
+backdrop-filter:blur(12px);
+box-shadow:
+0 24px 60px rgba(0,0,0,.14);
+border:1px solid rgba(255,255,255,.6);
+max-width:360px;
 }
 
-.category-card img{
-position:absolute;
-inset:0;
-width:100%;
-height:100%;
-transition:.6s;
-}
-
-.category-card:hover img{
-transform:scale(1.06);
-}
-
-.category-overlay{
-position:absolute;
-inset:0;
-background:
-linear-gradient(
-to top,
-rgba(0,0,0,.88),
-rgba(0,0,0,.15)
-);
-padding:34px;
-display:flex;
-flex-direction:column;
-justify-content:flex-end;
-color:white;
-}
-
-.category-overlay h3{
+.floating-slogan-text h3{
 font-family:'Cormorant Garamond',serif;
-font-size:54px;
-line-height:1;
-margin-bottom:14px;
-}
-
-.category-overlay p{
-line-height:1.8;
-font-size:15px;
-margin-bottom:26px;
-color:#ececec;
-}
-
-.category-btn{
-height:54px;
-padding:0 26px;
-border-radius:999px;
-background:white;
+font-size:42px;
+line-height:1.1;
+font-style:italic;
+font-weight:600;
 color:#111;
-font-weight:800;
-display:inline-flex;
-align-items:center;
-justify-content:center;
-width:max-content;
-transition:.3s;
+margin-bottom:12px;
 }
 
-.category-btn:hover{
-background:#b78b53;
-color:white;
-}
-
-/* CONTACT */
-
-.contact-section{
-padding:90px 0 110px;
-}
-
-.contact-box{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-padding:55px;
-background:white;
-border-radius:42px;
-box-shadow:0 20px 60px rgba(0,0,0,.08);
-}
-
-.contact-image{
-border-radius:30px;
-overflow:hidden;
-min-height:620px;
-}
-
-.contact-image img{
-height:100%;
-}
-
-.contact-content h2{
-font-family:'Cormorant Garamond',serif;
-font-size:74px;
-line-height:1;
-margin-bottom:26px;
-}
-
-.contact-content p{
-font-size:18px;
-line-height:1.9;
-color:#625a52;
-margin-bottom:34px;
-}
-
-.contact-card{
-padding:24px;
-border-radius:24px;
-background:#f8f4ee;
-margin-bottom:18px;
-}
-
-.contact-card strong{
-display:block;
-margin-bottom:8px;
-font-size:17px;
-}
-
-.contact-card span{
-color:#6a6259;
-line-height:1.7;
-}
-
-.contact-buttons{
-display:flex;
-gap:16px;
-margin-top:30px;
-flex-wrap:wrap;
-}
-
-/* FOOTER */
-
-.footer{
-background:#111;
-color:white;
-padding:70px 0 30px;
-}
-
-.footer-grid{
-display:grid;
-grid-template-columns:1.3fr 1fr 1fr;
-gap:40px;
-margin-bottom:40px;
-}
-
-.footer h3{
-margin-bottom:16px;
-}
-
-.footer p,
-.footer a{
-color:#c7c7c7;
-line-height:1.9;
+.floating-slogan-text p{
 font-size:14px;
-}
-
-.copy{
-padding-top:24px;
-border-top:1px solid rgba(255,255,255,.1);
-text-align:center;
-font-size:13px;
-color:#888;
-}
-
-/* FLOAT BUTTON */
-
-.float-zalo{
-position:fixed;
-right:24px;
-bottom:24px;
-z-index:999;
-background:#0068ff;
-color:white;
-padding:16px 24px;
-border-radius:999px;
-font-weight:800;
-box-shadow:0 14px 40px rgba(0,104,255,.35);
+letter-spacing:2px;
+text-transform:uppercase;
+color:#bc8a4f;
+font-weight:700;
 }
 
 /* MOBILE */
 
 @media(max-width:980px){
 
-.menu{
-display:none;
-}
-
-.hero-grid,
-.category-grid,
-.contact-box,
-.footer-grid{
+.hero-grid{
 grid-template-columns:1fr;
 }
 
-.hero-left h1{
+.hero-title{
 font-size:72px;
+}
+
+.hero-title span{
+font-size:36px;
 }
 
 .hero-right{
@@ -550,36 +276,38 @@ height:auto;
 height:520px;
 }
 
-.floating-slogan{
-display:none;
+.floating-slogan-text{
+left:10px;
+bottom:90px;
+padding:24px;
+max-width:260px;
+}
+
+.floating-slogan-text h3{
+font-size:28px;
 }
 
 .hero-info{
 grid-template-columns:1fr;
 }
 
-.section-title{
-font-size:54px;
-}
-
-.contact-content h2{
-font-size:56px;
-}
-
-.contact-image{
-min-height:420px;
-}
-
 }
 
 @media(max-width:560px){
 
-.hero-left h1{
-font-size:56px;
+.hero-title{
+font-size:58px;
 }
 
-.hero-actions,
-.contact-buttons{
+.hero-title span{
+font-size:28px;
+}
+
+.hero-subtitle{
+font-size:18px;
+}
+
+.hero-actions{
 flex-direction:column;
 }
 
@@ -588,335 +316,8 @@ flex-direction:column;
 width:100%;
 }
 
-.float-zalo{
-left:14px;
-right:14px;
-text-align:center;
-bottom:14px;
-}
-
-body{
-padding-bottom:80px;
+.floating-logo{
+width:120px;
 }
 
 }
-
-</style>
-</head>
-
-<body>
-
-<header class="header">
-
-<div class="container nav">
-
-<a href="index.html" class="logo-wrap">
-
-<img src="assets/logo_cuonghai.jpg" class="logo">
-
-<div>
-<h2>Cường Hải</h2>
-<p>Fashion Wholesale Showroom</p>
-</div>
-
-</a>
-
-<nav class="menu">
-
-<a href="hangnu.html">Thời trang nữ</a>
-
-<a href="hangnam.html">Thời trang nam</a>
-
-<a href="phukien.html">Phụ kiện</a>
-
-<a href="#contact">Cửa hàng</a>
-
-</nav>
-
-</div>
-
-</header>
-
-<section class="hero">
-
-<div class="container hero-grid">
-
-<div class="hero-left">
-
-<div class="hero-tag">
-✦ SHOWROOM THỜI TRANG QUẢNG CHÂU - NINH HIỆP
-</div>
-
-<h1>
-Cường Hải<br>
-<span>showroom thời trang cho khách sỉ</span><br>
-</h1>
-
-<p class="hero-desc">
-Website trung bày mẫu mới theo từng nhóm ngành hàng.
-Khách xem mẫu trực tiếp trên web và tham gia nhóm Zalo phù hợp để cập nhật hàng nhanh hơn mỗi ngày.
-</p>
-
-<div class="hero-actions">
-
-<a href="#showroom" class="btn-dark">
-Xem showroom
-</a>
-
-<a href="#contact" class="btn-light">
-Liên hệ cửa hàng
-</a>
-
-</div>
-
-<div class="hero-info">
-
-<div class="hero-info-card">
-<strong>Showroom thực tế</strong>
-<span>Điếm Kiều, Xóm 6 - Ninh Hiệp</span>
-</div>
-
-<div class="hero-info-card">
-<strong>Cập nhật mỗi ngày</strong>
-<span>Mẫu mới liên tục qua Zalo nhóm</span>
-</div>
-
-<div class="hero-info-card">
-<strong>Chuyên khách sỉ</strong>
-<span>Nguồn hàng cho shop & reseller</span>
-</div>
-
-</div>
-
-</div>
-
-<div class="hero-right">
-
-<div class="main-store-image">
-<img src="assets/anh_cua_hang.jpg">
-</div>
-
-<div class="floating-logo">
-<img src="assets/logo_cuonghai.jpg">
-</div>
-
-<div class="floating-slogan">
-<img src="assets/slogan.jpg">
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="category-section" id="showroom">
-
-<div class="container">
-
-<div class="section-label">
-SHOWROOM NGÀNH HÀNG
-</div>
-
-<h2 class="section-title">
-Chọn đúng nhóm hàng<br>
-để xem mẫu nhanh hơn
-</h2>
-
-<p class="section-desc">
-Mỗi ngành hàng có showroom ảnh riêng và link Zalo riêng
-để khách sỉ theo dõi mẫu mới thuận tiện hơn.
-</p>
-
-<div class="category-grid">
-
-<!-- NỮ -->
-
-<div class="category-card">
-
-<img src="assets/hangnu/1.jpg">
-
-<div class="category-overlay">
-
-<h3>Thời trang nữ</h3>
-
-<p>
-Áo, Váy, Set nữ, mẫu hot trend và các dòng thời trang nữ cập nhật liên tục.
-</p>
-
-<a href="hangnu.html" class="category-btn">
-Xem showroom nữ
-</a>
-
-</div>
-
-</div>
-
-<!-- NAM -->
-
-<div class="category-card">
-
-<img src="assets/hangnam/1.jpg">
-
-<div class="category-overlay">
-
-<h3>Thời trang nam</h3>
-
-<p>
-Áo phông, quần short, hàng thể thao, set nam, đồ mặc hàng ngày và các mẫu dành cho shop nam.
-</p>
-
-<a href="hangnam.html" class="category-btn">
-Xem showroom nam
-</a>
-
-</div>
-
-</div>
-
-<!-- PHỤ KIỆN -->
-
-<div class="category-card">
-
-<img src="assets/phukien/1.jpg">
-
-<div class="category-overlay">
-
-<h3>Phụ kiện</h3>
-
-<p>
-Mũ, túi, phụ kiện QC và các sản phẩm thời trang bán kèm.
-</p>
-
-<a href="phukien.html" class="category-btn">
-Xem phụ kiện
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="contact-section" id="contact">
-
-<div class="container">
-
-<div class="contact-box">
-
-<div class="contact-image">
-<img src="assets/anh_cua_hang.jpg">
-</div>
-
-<div class="contact-content">
-
-<h2>
-Nguồn hàng thực tế tại Ninh Hiệp
-</h2>
-
-<p>
-Khách có thể tới trực tiếp showroom để xem mẫu,
-trao đổi đơn hàng và cập nhật nguồn hàng mới nhanh hơn.
-</p>
-
-<div class="contact-card">
-<strong>📍 Địa chỉ cửa hàng</strong>
-<span>Điếm Kiều, Xóm 6 - Ninh Hiệp</span>
-</div>
-
-<div class="contact-card">
-<strong>📞 Liên hệ</strong>
-<span>0358 137 668</span>
-</div>
-
-<div class="contact-card">
-<strong>📱 Facebook Page</strong>
-<span>Cường Hải Fashion Wholesale</span>
-</div>
-
-<div class="contact-buttons">
-
-<a href="https://zalo.me/g/dqggnm284"
-target="_blank"
-class="btn-dark">
-
-Vào Zalo
-
-</a>
-
-<a href="https://www.facebook.com/profile.php?id=100064044704231"
-target="_blank"
-class="btn-light">
-
-Facebook Page
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<footer class="footer">
-
-<div class="container footer-grid">
-
-<div>
-
-<h3>Cường Hải Fashion</h3>
-
-<p>
-Showroom thời trang khách sỉ tại Ninh Hiệp.
-Chuyên nguồn hàng QC dành cho shop và reseller.
-</p>
-
-</div>
-
-<div>
-
-<h3>Ngành hàng</h3>
-
-<p><a href="hangnu.html">Thời trang nữ</a></p>
-<p><a href="hangnam.html">Thời trang nam</a></p>
-<p><a href="phukien.html">Phụ kiện</a></p>
-
-</div>
-
-<div>
-
-<h3>Liên hệ</h3>
-
-<p>📍 Điếm Kiều, Xóm 6 - Ninh Hiệp</p>
-<p>☎️ 0358 137 668</p>
-
-</div>
-
-</div>
-
-<div class="container copy">
-
-© 2026 Cường Hải Fashion Wholesale Showroom
-
-</div>
-
-</footer>
-
-<a class="float-zalo"
-href="https://zalo.me/g/dqggnm284"
-target="_blank">
-
-💬 Vào Zalo ngay
-
-</a>
-
-</body>
-</html>
