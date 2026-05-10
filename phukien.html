@@ -4,12 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Showroom Phụ Kiện - Cường Hải</title>
+<title>Showroom Phụ Kiện | Cường Hải</title>
+
+<meta name="description" content="Showroom phụ kiện thời trang Cường Hải - túi, mũ, kính và phụ kiện QC dành cho khách sỉ và reseller.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -19,10 +21,24 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:'Be Vietnam Pro',sans-serif;
 background:#f7f3ed;
-color:#181818;
+color:#1d1d1d;
+overflow-x:hidden;
+}
+
+body.no-scroll{
+overflow:hidden;
+}
+
+a{
+text-decoration:none;
+color:inherit;
 }
 
 img{
@@ -31,256 +47,512 @@ display:block;
 object-fit:cover;
 }
 
-a{
-text-decoration:none;
-color:inherit;
-}
-
 .container{
-width:min(1280px,92%);
+width:92%;
+max-width:1320px;
 margin:auto;
 }
 
-header{
+/* HEADER */
+
+.header{
 position:sticky;
 top:0;
 z-index:999;
 background:rgba(255,255,255,.92);
-backdrop-filter:blur(10px);
+backdrop-filter:blur(16px);
 border-bottom:1px solid rgba(0,0,0,.06);
 }
 
 .nav{
-height:80px;
+height:82px;
 display:flex;
 align-items:center;
 justify-content:space-between;
 }
 
-.logo{
+.logo-wrap{
 display:flex;
 align-items:center;
 gap:14px;
 }
 
-.logo img{
-width:54px;
-height:54px;
+.logo{
+width:56px;
+height:56px;
 border-radius:50%;
+border:1px solid #e2d6c7;
 }
 
-.logo h2{
-font-family:'Playfair Display',serif;
-font-size:30px;
+.logo-wrap h2{
+font-size:18px;
+font-weight:800;
+}
+
+.logo-wrap p{
+font-size:13px;
+color:#756c63;
 }
 
 .menu{
 display:flex;
 gap:34px;
-font-weight:600;
+font-size:14px;
+font-weight:700;
 }
 
+.menu a{
+transition:.25s;
+}
+
+.menu a:hover,
+.menu a.active{
+color:#b78b53;
+}
+
+/* HERO */
+
 .hero{
-padding:90px 0 70px;
-background:linear-gradient(135deg,#f6f1ea,#efe4d4);
+padding:82px 0 70px;
+background:
+radial-gradient(circle at 85% 10%,rgba(183,139,83,.12),transparent 28%),
+linear-gradient(135deg,#f8f4ed 0%,#eee5d9 100%);
+overflow:hidden;
+position:relative;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:520px;
+height:520px;
+right:-180px;
+top:-180px;
+border-radius:50%;
+background:rgba(183,139,83,.08);
 }
 
 .hero-grid{
+position:relative;
+z-index:2;
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
+grid-template-columns:1.05fr .95fr;
+gap:70px;
 align-items:center;
 }
 
-.hero h1{
-font-family:'Playfair Display',serif;
-font-size:84px;
-line-height:.95;
+.hero-badge{
+display:inline-flex;
+padding:10px 18px;
+background:#efe4d3;
+border-radius:999px;
+font-size:13px;
+font-weight:800;
+color:#9d7442;
 margin-bottom:28px;
 }
 
+.hero h1{
+font-family:'Cormorant Garamond',serif;
+font-size:92px;
+line-height:.92;
+margin-bottom:26px;
+letter-spacing:-2px;
+}
+
 .hero h1 span{
-color:#b48a57;
+color:#b78b53;
 }
 
 .hero p{
 font-size:19px;
-line-height:1.8;
-color:#5f584f;
+line-height:1.86;
+color:#5c554d;
 margin-bottom:34px;
+max-width:720px;
 }
 
-.hero-buttons{
+.hero-actions{
 display:flex;
 gap:16px;
 flex-wrap:wrap;
+margin-bottom:34px;
+}
+
+.btn-dark,
+.btn-light,
+.btn-zalo{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+min-height:54px;
+padding:0 30px;
+border-radius:999px;
+font-weight:800;
+transition:.28s;
 }
 
 .btn-dark{
 background:#111;
 color:#fff;
-padding:16px 30px;
-border-radius:999px;
-font-weight:700;
+}
+
+.btn-dark:hover{
+background:#b78b53;
+transform:translateY(-3px);
 }
 
 .btn-light{
 border:1.5px solid #111;
-padding:16px 30px;
-border-radius:999px;
-font-weight:700;
+background:rgba(255,255,255,.4);
+}
+
+.btn-light:hover{
+background:#111;
+color:#fff;
+}
+
+.btn-zalo{
+background:#0068ff;
+color:white;
+box-shadow:0 14px 34px rgba(0,104,255,.28);
+}
+
+.hero-stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:14px;
+}
+
+.stat-card{
+padding:18px;
+background:rgba(255,255,255,.7);
+border-radius:22px;
+border:1px solid #e7dccd;
+}
+
+.stat-card strong{
+display:block;
+font-family:'Cormorant Garamond',serif;
+font-size:32px;
+margin-bottom:6px;
+}
+
+.stat-card span{
+font-size:13px;
+line-height:1.45;
+color:#6d655c;
 }
 
 .hero-images{
 position:relative;
-min-height:680px;
+min-height:720px;
 }
 
 .main-image{
-width:78%;
-margin-left:auto;
-border-radius:34px;
+position:absolute;
+right:0;
+top:0;
+width:76%;
+height:720px;
+border-radius:38px;
 overflow:hidden;
-box-shadow:0 20px 50px rgba(0,0,0,.15);
+box-shadow:0 30px 72px rgba(0,0,0,.16);
 }
 
 .main-image img{
-height:680px;
+height:100%;
 }
 
 .float-image{
 position:absolute;
 left:0;
-bottom:40px;
-width:42%;
-border-radius:28px;
+bottom:70px;
+width:43%;
 overflow:hidden;
-border:8px solid rgba(255,255,255,.95);
-box-shadow:0 20px 50px rgba(0,0,0,.14);
+border-radius:30px;
+border:10px solid rgba(255,255,255,.95);
+box-shadow:0 25px 56px rgba(0,0,0,.17);
 }
 
 .float-image img{
-height:320px;
+height:360px;
 }
 
 .float-logo{
 position:absolute;
 right:10px;
-bottom:-20px;
-width:160px;
+bottom:-18px;
+width:172px;
+padding:18px;
 background:#fff;
-padding:16px;
-border-radius:28px;
-box-shadow:0 12px 30px rgba(0,0,0,.12);
+border-radius:30px;
+box-shadow:0 18px 42px rgba(0,0,0,.13);
 }
 
-.section{
-padding:100px 0;
+/* SECTION */
+
+.gallery-section{
+padding:105px 0 50px;
 }
 
 .section-head{
-margin-bottom:50px;
+display:flex;
+justify-content:space-between;
+gap:36px;
+align-items:flex-end;
+margin-bottom:44px;
 }
 
-.label{
+.section-label{
 font-size:13px;
+font-weight:900;
 letter-spacing:2px;
-font-weight:800;
-color:#b48a57;
-margin-bottom:12px;
+color:#b78b53;
+margin-bottom:14px;
 }
 
 .section-title{
-font-family:'Playfair Display',serif;
-font-size:62px;
-line-height:1;
-margin-bottom:18px;
+font-family:'Cormorant Garamond',serif;
+font-size:72px;
+line-height:.98;
 }
 
 .section-desc{
-font-size:18px;
+max-width:460px;
+font-size:17px;
 line-height:1.8;
-color:#5f584f;
-max-width:760px;
+color:#61584f;
+}
+
+.gallery-note{
+margin-bottom:28px;
+padding:18px 20px;
+border-radius:20px;
+background:#fff;
+border:1px solid #eadfce;
+line-height:1.75;
+color:#5f574f;
 }
 
 .gallery{
-columns:4 260px;
-column-gap:18px;
+columns:4 240px;
+column-gap:22px;
 }
 
 .gallery-item{
+position:relative;
 break-inside:avoid;
-margin-bottom:18px;
 overflow:hidden;
-border-radius:22px;
+margin-bottom:22px;
+border-radius:26px;
 background:#fff;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+cursor:zoom-in;
+box-shadow:0 12px 34px rgba(0,0,0,.09);
 }
 
 .gallery-item img{
-transition:.4s;
+transition:.45s;
 }
 
 .gallery-item:hover img{
-transform:scale(1.03);
+transform:scale(1.05);
+filter:brightness(.88);
 }
 
-.bottom-cta{
-padding:100px 0;
+.gallery-overlay{
+position:absolute;
+left:0;
+right:0;
+bottom:0;
+padding:42px 18px 18px;
+background:linear-gradient(to top,rgba(0,0,0,.75),transparent);
+color:white;
+font-size:13px;
+font-weight:800;
+opacity:0;
+transition:.3s;
 }
 
-.cta-box{
-background:linear-gradient(135deg,#111,#2a2a2a,#4b4b4b);
-color:#fff;
-padding:70px;
-border-radius:38px;
-text-align:center;
+.gallery-item:hover .gallery-overlay{
+opacity:1;
 }
 
-.cta-box h2{
-font-family:'Playfair Display',serif;
-font-size:56px;
+/* CTA */
+
+.zalo-box{
+position:relative;
+overflow:hidden;
+margin:70px 0 40px;
+padding:62px;
+border-radius:42px;
+background:
+linear-gradient(135deg,rgba(17,17,17,.95),rgba(91,64,38,.95),rgba(183,139,83,.95)),
+url('assets/phukien/1.jpg') center/cover;
+color:white;
+box-shadow:0 28px 60px rgba(0,0,0,.16);
+}
+
+.zalo-box h2{
+font-family:'Cormorant Garamond',serif;
+font-size:66px;
+line-height:1;
 margin-bottom:20px;
-}
-
-.cta-box p{
-font-size:18px;
-line-height:1.8;
 max-width:760px;
-margin:auto;
-margin-bottom:34px;
-color:#ddd;
 }
 
-.btn-zalo{
-display:inline-flex;
+.zalo-box p{
+max-width:760px;
+font-size:18px;
+line-height:1.86;
+margin-bottom:34px;
+color:#ececec;
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+inset:0;
+display:none;
 align-items:center;
 justify-content:center;
-padding:18px 34px;
-border-radius:999px;
-background:#0068ff;
-color:#fff;
-font-weight:700;
-box-shadow:0 10px 25px rgba(0,104,255,.3);
+background:rgba(0,0,0,.92);
+z-index:99999;
+padding:28px;
 }
 
-footer{
-background:#111;
-color:#fff;
-padding:40px 0;
-text-align:center;
-margin-top:80px;
+.lightbox.active{
+display:flex;
 }
+
+.lightbox-stage{
+position:relative;
+width:min(1100px,92vw);
+height:min(86vh,920px);
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.lightbox-img{
+max-width:100%;
+max-height:100%;
+border-radius:18px;
+box-shadow:0 24px 70px rgba(0,0,0,.55);
+}
+
+.lightbox-close{
+position:absolute;
+top:22px;
+right:28px;
+width:48px;
+height:48px;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.18);
+color:white;
+font-size:32px;
+cursor:pointer;
+}
+
+.lightbox-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:58px;
+height:58px;
+border-radius:50%;
+border:none;
+background:rgba(255,255,255,.12);
+color:white;
+font-size:28px;
+cursor:pointer;
+}
+
+.prev-btn{
+left:24px;
+}
+
+.next-btn{
+right:24px;
+}
+
+.lightbox-counter{
+position:absolute;
+left:50%;
+bottom:22px;
+transform:translateX(-50%);
+padding:10px 16px;
+border-radius:999px;
+background:rgba(255,255,255,.1);
+color:white;
+font-size:13px;
+font-weight:700;
+}
+
+/* FOOTER */
+
+.footer{
+margin-top:80px;
+padding:62px 0 34px;
+background:#111;
+color:white;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:1.4fr 1fr 1fr;
+gap:40px;
+margin-bottom:44px;
+}
+
+.footer h3{
+margin-bottom:16px;
+font-size:18px;
+}
+
+.footer p,
+.footer a{
+color:#bdbdbd;
+line-height:1.85;
+font-size:14px;
+}
+
+.copy{
+padding-top:26px;
+border-top:1px solid rgba(255,255,255,.1);
+text-align:center;
+font-size:13px;
+color:#999;
+}
+
+.float-zalo{
+position:fixed;
+right:24px;
+bottom:24px;
+z-index:999;
+padding:16px 24px;
+border-radius:999px;
+background:#0068ff;
+color:white;
+font-weight:900;
+box-shadow:0 14px 34px rgba(0,104,255,.36);
+}
+
+/* MOBILE */
 
 @media(max-width:980px){
 
-.hero-grid{
-grid-template-columns:1fr;
+.menu{
+display:none;
 }
 
-.hero h1{
-font-size:58px;
+.hero-grid,
+.section-head,
+.footer-grid{
+display:grid;
+grid-template-columns:1fr;
 }
 
 .hero-images{
@@ -288,7 +560,9 @@ min-height:auto;
 }
 
 .main-image{
+position:relative;
 width:100%;
+height:auto;
 }
 
 .main-image img{
@@ -300,12 +574,58 @@ height:520px;
 display:none;
 }
 
-.gallery{
-columns:2 160px;
+.hero h1{
+font-size:58px;
 }
 
-.section-title{
-font-size:42px;
+.gallery{
+columns:2 160px;
+column-gap:14px;
+}
+
+.gallery-item{
+margin-bottom:14px;
+}
+
+.zalo-box{
+padding:38px 26px;
+}
+
+.zalo-box h2{
+font-size:46px;
+}
+
+}
+
+@media(max-width:560px){
+
+.hero h1{
+font-size:50px;
+}
+
+.gallery{
+columns:1;
+}
+
+.btn-dark,
+.btn-light,
+.btn-zalo{
+width:100%;
+}
+
+.hero-actions{
+flex-direction:column;
+}
+
+.float-zalo{
+left:14px;
+right:14px;
+bottom:14px;
+text-align:center;
+}
+
+body{
+padding-bottom:72px;
 }
 
 }
@@ -315,27 +635,32 @@ font-size:42px;
 
 <body>
 
-<header>
+<header class="header">
 
 <div class="container nav">
 
-<a href="index.html" class="logo">
+<a href="index.html" class="logo-wrap">
 
-<img src="assets/logo_cuonghai.jpg">
+<img src="assets/logo_cuonghai.jpg" class="logo">
 
 <div>
 <h2>Cường Hải</h2>
-<span>Fashion Wholesale Showroom</span>
+<p>Fashion Wholesale Showroom</p>
 </div>
 
 </a>
 
-<div class="menu">
+<nav class="menu">
+
 <a href="index.html">Trang chủ</a>
-<a href="hangnu.html">Nữ</a>
-<a href="hangnam.html">Nam</a>
-<a href="phukien.html">Phụ kiện</a>
-</div>
+
+<a href="hangnu.html">Thời trang nữ</a>
+
+<a href="hangnam.html">Thời trang nam</a>
+
+<a href="phukien.html" class="active">Phụ kiện</a>
+
+</nav>
 
 </div>
 
@@ -347,30 +672,50 @@ font-size:42px;
 
 <div>
 
-<div class="label">
-✦ SHOWROOM PHỤ KIỆN
+<div class="hero-badge">
+✦ SHOWROOM PHỤ KIỆN QC
 </div>
 
 <h1>
 Phụ kiện<br>
-<span>thời trang QC</span>
+<span>thời trang</span><br>
+cho khách sỉ
 </h1>
 
 <p>
-Mũ, túi, phụ kiện thời trang và các sản phẩm đi kèm cập nhật thường xuyên cho khách sỉ.
+Cập nhật túi, mũ, kính và các mẫu phụ kiện thời trang QC liên tục cho khách sỉ và reseller.
 </p>
 
-<div class="hero-buttons">
+<div class="hero-actions">
 
 <a href="#gallery" class="btn-dark">
 Xem phụ kiện
 </a>
 
-<a target="_blank"
-href="https://zalo.me/g/svctbi087"
+<a href="https://zalo.me/g/svctbi087"
+target="_blank"
 class="btn-light">
-Vào nhóm Zalo
+Vào nhóm Zalo phụ kiện
 </a>
+
+</div>
+
+<div class="hero-stats">
+
+<div class="stat-card">
+<strong>01</strong>
+<span>Showroom phụ kiện riêng</span>
+</div>
+
+<div class="stat-card">
+<strong>Zalo</strong>
+<span>Cập nhật mẫu nhanh</span>
+</div>
+
+<div class="stat-card">
+<strong>QC</strong>
+<span>Mẫu dành cho khách sỉ</span>
+</div>
 
 </div>
 
@@ -396,62 +741,61 @@ Vào nhóm Zalo
 
 </section>
 
-<section class="section" id="gallery">
+<section class="gallery-section" id="gallery">
 
 <div class="container">
 
 <div class="section-head">
 
-<div class="label">
+<div>
+<div class="section-label">
 SHOWROOM PHỤ KIỆN
 </div>
 
 <h2 class="section-title">
 Mẫu phụ kiện mới cập nhật
 </h2>
+</div>
 
 <p class="section-desc">
-Khách sỉ xem trực tiếp toàn bộ mẫu phụ kiện trước khi vào nhóm Zalo để trao đổi nhanh hơn.
+Bấm vào ảnh để xem fullscreen và chuyển qua lại giữa các mẫu phụ kiện mới.
 </p>
 
+</div>
+
+<div class="gallery-note">
+Upload thêm ảnh theo dạng: 9.jpg, 10.jpg, 11.jpg...
+rồi thêm thẻ ảnh tương ứng vào gallery.
 </div>
 
 <div class="gallery">
 
-<div class="gallery-item"><img src="assets/phukien/1.jpg"></div>
-<div class="gallery-item"><img src="assets/phukien/2.jpg"></div>
-<div class="gallery-item"><img src="assets/phukien/3.jpg"></div>
-<div class="gallery-item"><img src="assets/phukien/4.jpg"></div>
-<div class="gallery-item"><img src="assets/phukien/5.jpg"></div>
-<div class="gallery-item"><img src="assets/phukien/6.jpg"></div>
-<div class="gallery-item"><img src="assets/phukien/7.jpg"></div>
-<div class="gallery-item"><img src="assets/phukien/8.jpg"></div>
+<div class="gallery-item"><img src="assets/phukien/1.jpg" onclick="openLightbox(0)"><div class="gallery-overlay">Phụ kiện 01</div></div>
+<div class="gallery-item"><img src="assets/phukien/2.jpg" onclick="openLightbox(1)"><div class="gallery-overlay">Phụ kiện 02</div></div>
+<div class="gallery-item"><img src="assets/phukien/3.jpg" onclick="openLightbox(2)"><div class="gallery-overlay">Phụ kiện 03</div></div>
+<div class="gallery-item"><img src="assets/phukien/4.jpg" onclick="openLightbox(3)"><div class="gallery-overlay">Phụ kiện 04</div></div>
+<div class="gallery-item"><img src="assets/phukien/5.jpg" onclick="openLightbox(4)"><div class="gallery-overlay">Phụ kiện 05</div></div>
+<div class="gallery-item"><img src="assets/phukien/6.jpg" onclick="openLightbox(5)"><div class="gallery-overlay">Phụ kiện 06</div></div>
+<div class="gallery-item"><img src="assets/phukien/7.jpg" onclick="openLightbox(6)"><div class="gallery-overlay">Phụ kiện 07</div></div>
+<div class="gallery-item"><img src="assets/phukien/8.jpg" onclick="openLightbox(7)"><div class="gallery-overlay">Phụ kiện 08</div></div>
 
 </div>
 
-</div>
-
-</section>
-
-<section class="bottom-cta">
-
-<div class="container">
-
-<div class="cta-box">
+<div class="zalo-box">
 
 <h2>
-Tham gia nhóm Zalo phụ kiện
+Muốn nhận mẫu phụ kiện mới nhanh hơn?
 </h2>
 
 <p>
-Cập nhật mẫu phụ kiện mới nhanh hơn mỗi ngày và trao đổi trực tiếp với showroom.
+Tham gia nhóm Zalo phụ kiện để cập nhật mẫu mới mỗi ngày và trao đổi trực tiếp với showroom.
 </p>
 
-<a target="_blank"
+<a class="btn-zalo"
 href="https://zalo.me/g/svctbi087"
-class="btn-zalo">
+target="_blank">
 
-👜 Vào nhóm phụ kiện
+👜 Tham gia nhóm Zalo phụ kiện
 
 </a>
 
@@ -461,9 +805,148 @@ class="btn-zalo">
 
 </section>
 
-<footer>
-© 2026 Cường Hải Fashion Showroom
+<footer class="footer">
+
+<div class="container footer-grid">
+
+<div>
+<h3>Cường Hải Fashion</h3>
+<p>Showroom phụ kiện QC chuyên khách sỉ tại Ninh Hiệp.</p>
+</div>
+
+<div>
+<h3>Liên hệ</h3>
+<p>📍 Điếm Kiều, Xóm 6 - Ninh Hiệp</p>
+<p>☎️ 0358 137 668</p>
+</div>
+
+<div>
+<h3>Điều hướng</h3>
+<p><a href="hangnu.html">Showroom nữ</a></p>
+<p><a href="hangnam.html">Showroom nam</a></p>
+</div>
+
+</div>
+
+<div class="container copy">
+© 2026 Cường Hải Fashion Showroom · Phụ kiện
+</div>
+
 </footer>
+
+<a class="float-zalo"
+href="https://zalo.me/g/svctbi087"
+target="_blank">
+
+💬 Zalo phụ kiện
+
+</a>
+
+<div class="lightbox" id="lightbox">
+
+<button class="lightbox-close" onclick="closeLightbox()">
+×
+</button>
+
+<button class="lightbox-btn prev-btn" onclick="prevImage(event)">
+‹
+</button>
+
+<div class="lightbox-stage" onclick="closeLightbox()">
+
+<img class="lightbox-img" id="lightbox-img">
+
+</div>
+
+<button class="lightbox-btn next-btn" onclick="nextImage(event)">
+›
+</button>
+
+<div class="lightbox-counter" id="lightbox-counter">
+1 / 8
+</div>
+
+</div>
+
+<script>
+
+const images = [
+"assets/phukien/1.jpg",
+"assets/phukien/2.jpg",
+"assets/phukien/3.jpg",
+"assets/phukien/4.jpg",
+"assets/phukien/5.jpg",
+"assets/phukien/6.jpg",
+"assets/phukien/7.jpg",
+"assets/phukien/8.jpg"
+];
+
+let currentIndex = 0;
+
+function openLightbox(index){
+
+currentIndex = index;
+
+updateLightbox();
+
+document.getElementById("lightbox").classList.add("active");
+
+document.body.classList.add("no-scroll");
+
+}
+
+function closeLightbox(){
+
+document.getElementById("lightbox").classList.remove("active");
+
+document.body.classList.remove("no-scroll");
+
+}
+
+function updateLightbox(){
+
+document.getElementById("lightbox-img").src = images[currentIndex];
+
+document.getElementById("lightbox-counter").textContent =
+(currentIndex + 1) + " / " + images.length;
+
+}
+
+function nextImage(event){
+
+if(event) event.stopPropagation();
+
+currentIndex = (currentIndex + 1) % images.length;
+
+updateLightbox();
+
+}
+
+function prevImage(event){
+
+if(event) event.stopPropagation();
+
+currentIndex = (currentIndex - 1 + images.length) % images.length;
+
+updateLightbox();
+
+}
+
+document.addEventListener("keydown",function(event){
+
+const lightbox = document.getElementById("lightbox");
+
+if(!lightbox.classList.contains("active")) return;
+
+if(event.key === "Escape") closeLightbox();
+
+if(event.key === "ArrowRight") nextImage();
+
+if(event.key === "ArrowLeft") prevImage();
+
+});
+
+</script>
 
 </body>
 </html>
