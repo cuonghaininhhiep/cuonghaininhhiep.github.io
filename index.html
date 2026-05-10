@@ -1,592 +1,710 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cường Hải Fashion Showroom</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:'Be Vietnam Pro',sans-serif;
-      background:#f8f5ef;
-      color:#1f1f1f;
-      overflow-x:hidden;
-    }
-
-    img{
-      width:100%;
-      display:block;
-      object-fit:cover;
-    }
-
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
-
-    .container{
-      width:min(1200px,92%);
-      margin:auto;
-    }
-
-    /* HEADER */
-
-    header{
-      position:sticky;
-      top:0;
-      z-index:999;
-      background:rgba(255,255,255,.92);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid #eee;
-    }
-
-    .nav{
-      height:82px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
-
-    .brand img{
-      width:60px;
-      height:60px;
-      border-radius:50%;
-      object-fit:cover;
-      border:2px solid #e7dfd0;
-    }
-
-    .brand strong{
-      font-size:28px;
-      font-family:'Playfair Display',serif;
-    }
-
-    .brand span{
-      display:block;
-      font-size:13px;
-      color:#7b7268;
-      margin-top:3px;
-    }
-
-    .menu{
-      display:flex;
-      gap:36px;
-      font-weight:600;
-      font-size:15px;
-    }
-
-    .menu a:hover{
-      color:#b48a55;
-    }
-
-    /* HERO */
-
-    .hero{
-      padding:90px 0 70px;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:60px;
-      align-items:center;
-    }
-
-    .eyebrow{
-      display:inline-block;
-      padding:10px 18px;
-      background:#efe8db;
-      border-radius:999px;
-      color:#9d7440;
-      font-size:13px;
-      font-weight:700;
-      margin-bottom:28px;
-    }
-
-    h1{
-      font-family:'Playfair Display',serif;
-      font-size:82px;
-      line-height:.95;
-      letter-spacing:-2px;
-      margin-bottom:26px;
-    }
-
-    h1 span{
-      color:#bc9562;
-    }
-
-    .hero-desc{
-      font-size:20px;
-      line-height:1.8;
-      color:#5b5247;
-      max-width:650px;
-      margin-bottom:28px;
-    }
-
-    .hero-bullets{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin-bottom:34px;
-    }
-
-    .hero-bullets span{
-      background:#fff;
-      padding:12px 16px;
-      border-radius:14px;
-      border:1px solid #eadfce;
-      font-size:14px;
-      font-weight:600;
-    }
-
-    .hero-actions{
-      display:flex;
-      gap:16px;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      padding:16px 28px;
-      border-radius:999px;
-      font-weight:700;
-      transition:.3s;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .btn-gold{
-      background:#111;
-      color:#fff;
-    }
-
-    .btn-gold:hover{
-      transform:translateY(-3px);
-      background:#bc9562;
-    }
-
-    .btn-soft{
-      border:2px solid #111;
-    }
-
-    .btn-soft:hover{
-      background:#111;
-      color:#fff;
-    }
-
-    /* HERO VISUAL */
-
-    .hero-visual{
-      position:relative;
-      min-height:650px;
-    }
-
-    .visual-main{
-      width:78%;
-      margin-left:auto;
-      border-radius:34px;
-      overflow:hidden;
-      box-shadow:0 20px 50px rgba(0,0,0,.12);
-    }
-
-    .visual-main img{
-      height:650px;
-    }
-
-    .visual-small{
-      position:absolute;
-      left:0;
-      bottom:40px;
-      width:48%;
-      border-radius:28px;
-      overflow:hidden;
-      border:8px solid #fff;
-      box-shadow:0 15px 40px rgba(0,0,0,.12);
-    }
-
-    .visual-small img{
-      height:320px;
-    }
-
-    .visual-logo{
-      position:absolute;
-      right:20px;
-      bottom:-30px;
-      width:180px;
-      background:#fff;
-      border-radius:28px;
-      padding:16px;
-      box-shadow:0 10px 30px rgba(0,0,0,.1);
-    }
-
-    /* SECTION */
-
-    .section{
-      padding:110px 0;
-    }
-
-    .section-head{
-      margin-bottom:50px;
-    }
-
-    .section-label{
-      color:#b48a55;
-      font-size:13px;
-      font-weight:800;
-      letter-spacing:2px;
-      margin-bottom:14px;
-    }
-
-    .section-title{
-      font-family:'Playfair Display',serif;
-      font-size:64px;
-      line-height:1;
-      margin-bottom:20px;
-    }
-
-    .section-desc{
-      max-width:760px;
-      color:#5d564d;
-      font-size:18px;
-      line-height:1.8;
-    }
-
-    /* GALLERY */
-
-    .gallery-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:24px;
-    }
-
-    .gallery-item{
-      position:relative;
-      overflow:hidden;
-      border-radius:28px;
-      background:#fff;
-      box-shadow:0 12px 30px rgba(0,0,0,.08);
-    }
-
-    .gallery-item img{
-      height:420px;
-      transition:.4s;
-    }
-
-    .gallery-item:hover img{
-      transform:scale(1.05);
-    }
-
-    .gallery-item.large{
-      grid-row:span 2;
-    }
-
-    .gallery-item.large img{
-      height:865px;
-    }
-
-    .gallery-caption{
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:0;
-      padding:20px;
-      background:linear-gradient(to top,rgba(0,0,0,.8),transparent);
-      color:#fff;
-      font-weight:600;
-    }
-
-    .zalo-wrap{
-      margin-top:36px;
-      text-align:center;
-    }
-
-    .btn-zalo{
-      background:#0068ff;
-      color:#fff;
-      padding:18px 34px;
-      border-radius:999px;
-      font-weight:700;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      box-shadow:0 10px 30px rgba(0,104,255,.3);
-    }
-
-    .btn-zalo:hover{
-      transform:translateY(-3px);
-    }
-
-    /* CTA */
-
-    .cta{
-      padding-bottom:120px;
-    }
-
-    .cta-box{
-      background:#151515;
-      color:#fff;
-      border-radius:40px;
-      padding:70px;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .cta-box::before{
-      content:'';
-      position:absolute;
-      width:320px;
-      height:320px;
-      border-radius:50%;
-      background:rgba(255,255,255,.06);
-      top:-80px;
-      right:-80px;
-    }
-
-    .cta h2{
-      font-family:'Playfair Display',serif;
-      font-size:58px;
-      line-height:1.05;
-      margin-bottom:20px;
-      max-width:780px;
-    }
-
-    .cta p{
-      max-width:760px;
-      color:#d8d8d8;
-      line-height:1.8;
-      font-size:18px;
-      margin-bottom:34px;
-    }
-
-    .cta-buttons{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-    }
-
-    /* FOOTER */
-
-    footer{
-      background:#0d0d0d;
-      color:#fff;
-      padding:70px 0 30px;
-    }
-
-    .footer-grid{
-      display:grid;
-      grid-template-columns:2fr 1fr 1fr;
-      gap:50px;
-      margin-bottom:50px;
-    }
-
-    .footer-logo{
-      width:80px;
-      border-radius:50%;
-      margin-bottom:18px;
-    }
-
-    footer h3{
-      margin-bottom:18px;
-      font-size:18px;
-    }
-
-    footer p{
-      color:#bcbcbc;
-      line-height:1.9;
-      margin-bottom:10px;
-    }
-
-    .copyright{
-      border-top:1px solid rgba(255,255,255,.08);
-      padding-top:24px;
-      color:#9a9a9a;
-      font-size:14px;
-    }
-
-    /* FLOATING */
-
-    .floating-zalo{
-      position:fixed;
-      right:24px;
-      bottom:24px;
-      background:#0068ff;
-      color:#fff;
-      padding:18px 26px;
-      border-radius:999px;
-      font-weight:700;
-      box-shadow:0 12px 30px rgba(0,104,255,.4);
-      z-index:999;
-      animation:pulse 2s infinite;
-    }
-
-    @keyframes pulse{
-      0%{transform:scale(1);}
-      50%{transform:scale(1.05);}
-      100%{transform:scale(1);}
-    }
-
-    /* MOBILE */
-
-    @media(max-width:980px){
-
-      .hero-grid{
-        grid-template-columns:1fr;
-      }
-
-      h1{
-        font-size:58px;
-      }
-
-      .section-title{
-        font-size:46px;
-      }
-
-      .gallery-grid{
-        grid-template-columns:1fr;
-      }
-
-      .gallery-item.large{
-        grid-row:auto;
-      }
-
-      .gallery-item.large img{
-        height:420px;
-      }
-
-      .hero-visual{
-        min-height:auto;
-      }
-
-      .visual-main{
-        width:100%;
-      }
-
-      .visual-small{
-        display:none;
-      }
-
-      .visual-logo{
-        display:none;
-      }
-
-      .footer-grid{
-        grid-template-columns:1fr;
-      }
-
-      .menu{
-        display:none;
-      }
-
-      .cta-box{
-        padding:40px 30px;
-      }
-
-      .cta h2{
-        font-size:42px;
-      }
-
-    }
-
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Cường Hải Fashion Showroom</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Be Vietnam Pro',sans-serif;
+background:#f7f4ee;
+color:#1d1d1d;
+overflow-x:hidden;
+}
+
+img{
+width:100%;
+display:block;
+object-fit:cover;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+.container{
+width:min(1240px,92%);
+margin:auto;
+}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(255,255,255,.88);
+backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(0,0,0,.06);
+}
+
+.nav{
+height:84px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.brand img{
+width:62px;
+height:62px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid #e7ddcf;
+}
+
+.brand strong{
+font-family:'Playfair Display',serif;
+font-size:30px;
+line-height:1;
+}
+
+.brand span{
+display:block;
+font-size:13px;
+color:#7a7166;
+margin-top:4px;
+}
+
+.menu{
+display:flex;
+gap:38px;
+font-weight:600;
+font-size:15px;
+}
+
+.menu a{
+transition:.3s;
+}
+
+.menu a:hover{
+color:#b58a55;
+}
+
+/* HERO */
+
+.hero{
+padding:90px 0 80px;
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1.05fr .95fr;
+gap:70px;
+align-items:center;
+}
+
+.eyebrow{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:12px 18px;
+background:#efe7d8;
+border-radius:999px;
+font-size:13px;
+font-weight:700;
+color:#9b7341;
+margin-bottom:28px;
+}
+
+h1{
+font-family:'Playfair Display',serif;
+font-size:88px;
+line-height:.92;
+letter-spacing:-2px;
+margin-bottom:28px;
+}
+
+h1 span{
+color:#b9915f;
+}
+
+.hero-desc{
+font-size:20px;
+line-height:1.8;
+color:#5f584e;
+margin-bottom:32px;
+max-width:680px;
+}
+
+.hero-tags{
+display:flex;
+flex-wrap:wrap;
+gap:14px;
+margin-bottom:36px;
+}
+
+.hero-tags span{
+padding:12px 18px;
+background:#fff;
+border:1px solid #eadfce;
+border-radius:14px;
+font-size:14px;
+font-weight:600;
+box-shadow:0 6px 16px rgba(0,0,0,.03);
+}
+
+.hero-actions{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:18px 30px;
+border-radius:999px;
+font-weight:700;
+transition:.3s;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+}
+
+.btn-dark{
+background:#111;
+color:#fff;
+}
+
+.btn-dark:hover{
+background:#b9915f;
+transform:translateY(-3px);
+}
+
+.btn-light{
+border:2px solid #111;
+}
+
+.btn-light:hover{
+background:#111;
+color:#fff;
+transform:translateY(-3px);
+}
+
+/* HERO VISUAL */
+
+.hero-visual{
+position:relative;
+min-height:700px;
+}
+
+.visual-main{
+width:78%;
+margin-left:auto;
+border-radius:36px;
+overflow:hidden;
+box-shadow:0 20px 60px rgba(0,0,0,.12);
+}
+
+.visual-main img{
+height:700px;
+}
+
+.visual-card{
+position:absolute;
+left:0;
+bottom:50px;
+width:46%;
+border-radius:28px;
+overflow:hidden;
+border:8px solid #fff;
+box-shadow:0 18px 40px rgba(0,0,0,.14);
+}
+
+.visual-card img{
+height:340px;
+}
+
+.visual-logo{
+position:absolute;
+right:10px;
+bottom:-30px;
+width:180px;
+background:#fff;
+padding:18px;
+border-radius:28px;
+box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+/* SECTION */
+
+.section{
+padding:110px 0;
+}
+
+.section-head{
+margin-bottom:56px;
+}
+
+.section-label{
+font-size:13px;
+font-weight:800;
+letter-spacing:2px;
+color:#b58a55;
+margin-bottom:14px;
+}
+
+.section-title{
+font-family:'Playfair Display',serif;
+font-size:66px;
+line-height:1;
+margin-bottom:20px;
+}
+
+.section-desc{
+max-width:760px;
+font-size:18px;
+line-height:1.8;
+color:#60574d;
+}
+
+/* GALLERY */
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
+
+.gallery-item{
+position:relative;
+overflow:hidden;
+border-radius:30px;
+background:#fff;
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.gallery-item img{
+height:420px;
+transition:.5s;
+}
+
+.gallery-item:hover img{
+transform:scale(1.05);
+}
+
+.gallery-item.large{
+grid-row:span 2;
+}
+
+.gallery-item.large img{
+height:864px;
+}
+
+.gallery-caption{
+position:absolute;
+left:0;
+right:0;
+bottom:0;
+padding:22px;
+background:linear-gradient(to top,rgba(0,0,0,.82),transparent);
+color:#fff;
+font-weight:600;
+}
+
+.zalo-wrap{
+margin-top:38px;
+text-align:center;
+}
+
+.btn-zalo{
+background:#0068ff;
+color:#fff;
+padding:18px 34px;
+border-radius:999px;
+font-weight:700;
+display:inline-flex;
+align-items:center;
+gap:10px;
+transition:.3s;
+box-shadow:0 12px 30px rgba(0,104,255,.3);
+}
+
+.btn-zalo:hover{
+transform:translateY(-4px);
+}
+
+/* STORE */
+
+.store{
+padding-top:40px;
+}
+
+.store-box{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.store-image{
+overflow:hidden;
+border-radius:36px;
+box-shadow:0 20px 50px rgba(0,0,0,.12);
+}
+
+.store-image img{
+height:700px;
+}
+
+.store-content{
+background:#fff;
+padding:60px;
+border-radius:36px;
+box-shadow:0 14px 40px rgba(0,0,0,.06);
+}
+
+.store-content h2{
+font-family:'Playfair Display',serif;
+font-size:60px;
+line-height:1;
+margin-bottom:22px;
+}
+
+.store-content p{
+font-size:18px;
+line-height:1.9;
+color:#5e564d;
+margin-bottom:34px;
+}
+
+.info-card{
+padding:22px;
+border:1px solid #eee1cf;
+border-radius:22px;
+margin-bottom:18px;
+background:#faf8f4;
+}
+
+.info-card strong{
+display:block;
+margin-bottom:6px;
+font-size:18px;
+}
+
+.info-card span{
+color:#6a6258;
+line-height:1.7;
+}
+
+/* CTA PREMIUM */
+
+.cta{
+padding:120px 0;
+}
+
+.cta-box{
+position:relative;
+overflow:hidden;
+background:linear-gradient(135deg,#2d1f14,#5e3c24,#b48a55);
+color:#fff;
+border-radius:42px;
+padding:80px 70px;
+box-shadow:0 30px 60px rgba(0,0,0,.15);
+}
+
+.cta-box::before{
+content:'';
+position:absolute;
+width:420px;
+height:420px;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+top:-120px;
+right:-120px;
+}
+
+.cta-box::after{
+content:'';
+position:absolute;
+width:260px;
+height:260px;
+border-radius:50%;
+background:rgba(255,255,255,.05);
+bottom:-80px;
+left:-80px;
+}
+
+.cta h2{
+position:relative;
+z-index:2;
+font-family:'Playfair Display',serif;
+font-size:66px;
+line-height:1.05;
+margin-bottom:24px;
+max-width:760px;
+}
+
+.cta p{
+position:relative;
+z-index:2;
+font-size:18px;
+line-height:1.9;
+color:#f3ede6;
+max-width:760px;
+margin-bottom:36px;
+}
+
+.cta-buttons{
+position:relative;
+z-index:2;
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+}
+
+.btn-facebook{
+background:linear-gradient(135deg,#1877f2,#4f98ff);
+color:#fff;
+padding:18px 32px;
+border-radius:999px;
+font-weight:700;
+transition:.3s;
+box-shadow:0 12px 30px rgba(24,119,242,.28);
+}
+
+.btn-facebook:hover{
+transform:translateY(-4px);
+}
+
+/* FOOTER */
+
+footer{
+background:#0d0d0d;
+color:#fff;
+padding:70px 0 30px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:60px;
+margin-bottom:50px;
+}
+
+.footer-logo{
+width:90px;
+border-radius:50%;
+margin-bottom:18px;
+}
+
+footer h3{
+margin-bottom:18px;
+font-size:18px;
+}
+
+footer p{
+color:#bcbcbc;
+line-height:1.9;
+margin-bottom:10px;
+}
+
+.copyright{
+border-top:1px solid rgba(255,255,255,.08);
+padding-top:24px;
+font-size:14px;
+color:#999;
+}
+
+/* FLOATING */
+
+.floating-zalo{
+position:fixed;
+right:24px;
+bottom:24px;
+background:#0068ff;
+color:#fff;
+padding:18px 28px;
+border-radius:999px;
+font-weight:700;
+z-index:999;
+box-shadow:0 12px 30px rgba(0,104,255,.4);
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
+}
+
+/* MOBILE */
+
+@media(max-width:980px){
+
+.menu{
+display:none;
+}
+
+.hero-grid,
+.store-box{
+grid-template-columns:1fr;
+}
+
+h1{
+font-size:58px;
+}
+
+.section-title,
+.store-content h2,
+.cta h2{
+font-size:46px;
+}
+
+.hero-visual{
+min-height:auto;
+}
+
+.visual-main{
+width:100%;
+}
+
+.visual-card,
+.visual-logo{
+display:none;
+}
+
+.gallery-grid{
+grid-template-columns:1fr;
+}
+
+.gallery-item.large{
+grid-row:auto;
+}
+
+.gallery-item.large img{
+height:420px;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.store-content{
+padding:36px;
+}
+
+.cta-box{
+padding:46px 30px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="container nav">
 
-    <a class="brand" href="#">
-      <img src="assets/logo_cuonghai.jpg" alt="">
-      <div>
-        <strong>Cường Hải</strong>
-        <span>Fashion Wholesale Showroom</span>
-      </div>
-    </a>
+<div class="container nav">
 
-    <div class="menu">
-      <a href="#nu">Nữ</a>
-      <a href="#nam">Nam</a>
-      <a href="#phukien">Phụ kiện</a>
-      <a href="#lienhe">Liên hệ</a>
-    </div>
+<a href="#" class="brand">
 
-  </div>
+<img src="assets/logo_cuonghai.jpg" alt="">
+
+<div>
+<strong>Cường Hải</strong>
+<span>Fashion Wholesale Showroom</span>
+</div>
+
+</a>
+
+<div class="menu">
+<a href="#nu">Thời trang nữ</a>
+<a href="#nam">Thời trang nam</a>
+<a href="#phukien">Phụ kiện</a>
+<a href="#store">Cửa hàng</a>
+</div>
+
+</div>
+
 </header>
 
 <!-- HERO -->
 
 <section class="hero">
 
-  <div class="container hero-grid">
+<div class="container hero-grid">
 
-    <div>
+<div>
 
-      <div class="eyebrow">
-        ✦ NGUỒN SỈ THỜI TRANG QC · NINH HIỆP
-      </div>
+<div class="eyebrow">
+✦ Nguồn sỉ thời trang QC · Ninh Hiệp
+</div>
 
-      <h1>
-        Cường Hải<br>
-        <span>Showroom thời trang</span><br>
-        dành cho khách sỉ
-      </h1>
+<h1>
+Cường Hải<br>
+<span>showroom thời trang</span><br>
+cho khách sỉ
+</h1>
 
-      <p class="hero-desc">
-        Website trưng bày mẫu sản phẩm mới theo từng nhóm ngành hàng.
-        Khách xem mẫu trực tiếp trên web và tham gia nhóm Zalo tương ứng để cập nhật hàng mới nhanh hơn.
-      </p>
+<p class="hero-desc">
+Website trưng bày mẫu mới theo từng nhóm ngành hàng.
+Khách xem mẫu trực tiếp trên web và tham gia nhóm Zalo phù hợp để cập nhật hàng nhanh hơn mỗi ngày.
+</p>
 
-      <div class="hero-bullets">
-        <span>✓ Showroom ảnh thật</span>
-        <span>✓ Cập nhật mẫu liên tục</span>
-        <span>✓ Kéo khách về Zalo</span>
-      </div>
+<div class="hero-tags">
+<span>✓ Ảnh thật showroom</span>
+<span>✓ Cập nhật mẫu liên tục</span>
+<span>✓ Chuyên khách sỉ</span>
+</div>
 
-      <div class="hero-actions">
-        <a class="btn btn-gold" href="#nu">Xem showroom</a>
-        <a class="btn btn-soft" href="#lienhe">Liên hệ</a>
-      </div>
+<div class="hero-actions">
 
-    </div>
+<a href="#nu" class="btn btn-dark">
+Xem showroom
+</a>
 
-    <div class="hero-visual">
+<a href="#store" class="btn btn-light">
+Liên hệ cửa hàng
+</a>
 
-      <div class="visual-main">
-        <img src="assets/anh_cua_hang.jpg" alt="">
-      </div>
+</div>
 
-      <div class="visual-small">
-        <img src="assets/hangnu/1.jpg" alt="">
-      </div>
+</div>
 
-      <div class="visual-logo">
-        <img src="assets/logo_cuonghai.jpg" alt="">
-      </div>
+<div class="hero-visual">
 
-    </div>
+<div class="visual-main">
+<img src="assets/anh_cua_hang.jpg" alt="">
+</div>
 
-  </div>
+<div class="visual-card">
+<img src="assets/hangnu/1.jpg" alt="">
+</div>
+
+<div class="visual-logo">
+<img src="assets/logo_cuonghai.jpg" alt="">
+</div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -594,52 +712,56 @@
 
 <section class="section" id="nu">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-head">
-      <div class="section-label">SHOWROOM NỮ</div>
-      <h2 class="section-title">Thời trang nữ</h2>
+<div class="section-head">
+<div class="section-label">SHOWROOM NỮ</div>
 
-      <p class="section-desc">
-        Mẫu váy, set nữ, đồ trend và hàng QC cập nhật thường xuyên.
-      </p>
-    </div>
+<h2 class="section-title">
+Thời trang nữ
+</h2>
 
-    <div class="gallery-grid">
+<p class="section-desc">
+Váy, set nữ, đồ trend và các mẫu thời trang nữ QC cập nhật thường xuyên.
+</p>
+</div>
 
-      <div class="gallery-item large">
-        <img src="assets/hangnu/1.jpg">
-        <div class="gallery-caption">
-          Mẫu nữ mới cập nhật
-        </div>
-      </div>
+<div class="gallery-grid">
 
-      <div class="gallery-item">
-        <img src="assets/hangnu/2.jpg">
-      </div>
+<div class="gallery-item large">
+<img src="assets/hangnu/1.jpg">
+<div class="gallery-caption">
+Mẫu nữ mới cập nhật
+</div>
+</div>
 
-      <div class="gallery-item">
-        <img src="assets/hangnu/3.jpg">
-      </div>
+<div class="gallery-item">
+<img src="assets/hangnu/2.jpg">
+</div>
 
-      <div class="gallery-item">
-        <img src="assets/hangnu/4.jpg">
-      </div>
+<div class="gallery-item">
+<img src="assets/hangnu/3.jpg">
+</div>
 
-      <div class="gallery-item">
-        <img src="assets/hangnu/5.jpg">
-      </div>
+<div class="gallery-item">
+<img src="assets/hangnu/4.jpg">
+</div>
 
-    </div>
+<div class="gallery-item">
+<img src="assets/hangnu/5.jpg">
+</div>
 
-    <div class="zalo-wrap">
-      <a class="btn-zalo" target="_blank"
-      href="https://zalo.me/g/dqggnm284">
-        👗 Tham gia nhóm Zalo nữ
-      </a>
-    </div>
+</div>
 
-  </div>
+<div class="zalo-wrap">
+<a class="btn-zalo"
+target="_blank"
+href="https://zalo.me/g/dqggnm284">
+👗 Tham gia nhóm Zalo nữ
+</a>
+</div>
+
+</div>
 
 </section>
 
@@ -647,52 +769,60 @@
 
 <section class="section" id="nam">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-head">
-      <div class="section-label">SHOWROOM NAM</div>
-      <h2 class="section-title">Thời trang nam</h2>
+<div class="section-head">
 
-      <p class="section-desc">
-        Các mẫu áo nam, set nam và thời trang nam dành cho khách sỉ.
-      </p>
-    </div>
+<div class="section-label">
+SHOWROOM NAM
+</div>
 
-    <div class="gallery-grid">
+<h2 class="section-title">
+Thời trang nam
+</h2>
 
-      <div class="gallery-item large">
-        <img src="assets/hangnam/1.jpg">
-        <div class="gallery-caption">
-          Mẫu nam mới cập nhật
-        </div>
-      </div>
+<p class="section-desc">
+Áo nam, set nam và các mẫu thời trang nam QC dành cho shop và reseller.
+</p>
 
-      <div class="gallery-item">
-        <img src="assets/hangnam/2.jpg">
-      </div>
+</div>
 
-      <div class="gallery-item">
-        <img src="assets/hangnam/3.jpg">
-      </div>
+<div class="gallery-grid">
 
-      <div class="gallery-item">
-        <img src="assets/hangnam/4.jpg">
-      </div>
+<div class="gallery-item large">
+<img src="assets/hangnam/1.jpg">
+<div class="gallery-caption">
+Mẫu nam mới cập nhật
+</div>
+</div>
 
-      <div class="gallery-item">
-        <img src="assets/hangnam/5.jpg">
-      </div>
+<div class="gallery-item">
+<img src="assets/hangnam/2.jpg">
+</div>
 
-    </div>
+<div class="gallery-item">
+<img src="assets/hangnam/3.jpg">
+</div>
 
-    <div class="zalo-wrap">
-      <a class="btn-zalo" target="_blank"
-      href="https://zalo.me/g/kblodi121">
-        👔 Tham gia nhóm Zalo nam
-      </a>
-    </div>
+<div class="gallery-item">
+<img src="assets/hangnam/4.jpg">
+</div>
 
-  </div>
+<div class="gallery-item">
+<img src="assets/hangnam/5.jpg">
+</div>
+
+</div>
+
+<div class="zalo-wrap">
+<a class="btn-zalo"
+target="_blank"
+href="https://zalo.me/g/kblodi121">
+👔 Tham gia nhóm Zalo nam
+</a>
+</div>
+
+</div>
 
 </section>
 
@@ -700,96 +830,156 @@
 
 <section class="section" id="phukien">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-head">
-      <div class="section-label">SHOWROOM PHỤ KIỆN</div>
-      <h2 class="section-title">Phụ kiện thời trang</h2>
+<div class="section-head">
 
-      <p class="section-desc">
-        Các mẫu mũ, túi, phụ kiện QC và hàng bán kèm cập nhật thường xuyên.
-      </p>
-    </div>
+<div class="section-label">
+SHOWROOM PHỤ KIỆN
+</div>
 
-    <div class="gallery-grid">
+<h2 class="section-title">
+Phụ kiện thời trang
+</h2>
 
-      <div class="gallery-item large">
-        <img src="assets/phukien/1.jpg">
-        <div class="gallery-caption">
-          Phụ kiện thời trang QC
-        </div>
-      </div>
+<p class="section-desc">
+Mũ, túi và các phụ kiện thời trang QC cập nhật theo mẫu mới liên tục.
+</p>
 
-      <div class="gallery-item">
-        <img src="assets/phukien/2.jpg">
-      </div>
+</div>
 
-      <div class="gallery-item">
-        <img src="assets/phukien/3.jpg">
-      </div>
+<div class="gallery-grid">
 
-      <div class="gallery-item">
-        <img src="assets/phukien/4.jpg">
-      </div>
+<div class="gallery-item large">
+<img src="assets/phukien/1.jpg">
+<div class="gallery-caption">
+Phụ kiện mới cập nhật
+</div>
+</div>
 
-      <div class="gallery-item">
-        <img src="assets/phukien/5.jpg">
-      </div>
+<div class="gallery-item">
+<img src="assets/phukien/2.jpg">
+</div>
 
-    </div>
+<div class="gallery-item">
+<img src="assets/phukien/3.jpg">
+</div>
 
-    <div class="zalo-wrap">
-      <a class="btn-zalo" target="_blank"
-      href="https://zalo.me/g/svctbi087">
-        👜 Tham gia nhóm Zalo phụ kiện
-      </a>
-    </div>
+<div class="gallery-item">
+<img src="assets/phukien/4.jpg">
+</div>
 
-  </div>
+<div class="gallery-item">
+<img src="assets/phukien/5.jpg">
+</div>
+
+</div>
+
+<div class="zalo-wrap">
+<a class="btn-zalo"
+target="_blank"
+href="https://zalo.me/g/svctbi087">
+👜 Tham gia nhóm Zalo phụ kiện
+</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- STORE -->
+
+<section class="section store" id="store">
+
+<div class="container store-box">
+
+<div class="store-image">
+<img src="assets/anh_cua_hang.jpg">
+</div>
+
+<div class="store-content">
+
+<div class="section-label">
+CỬA HÀNG THỰC TẾ
+</div>
+
+<h2>
+Nguồn hàng tại Ninh Hiệp
+</h2>
+
+<p>
+Cường Hải chuyên nguồn sỉ thời trang QC cho khách shop, reseller và bán online.
+Khách có thể xem mẫu trực tiếp trên website hoặc tham gia nhóm Zalo để cập nhật nhanh hơn.
+</p>
+
+<div class="info-card">
+<strong>📍 Địa chỉ cửa hàng</strong>
+<span>Điếm Kiều, Xóm 6 - Ninh Hiệp</span>
+</div>
+
+<div class="info-card">
+<strong>☎️ Liên hệ</strong>
+<span>0358 137 668</span>
+</div>
+
+<div class="info-card">
+<strong>💬 Kênh cập nhật mẫu</strong>
+<span>Zalo nhóm theo ngành hàng & Facebook Page</span>
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 <!-- CTA -->
 
-<section class="cta" id="lienhe">
+<section class="cta">
 
-  <div class="container">
+<div class="container">
 
-    <div class="cta-box">
+<div class="cta-box">
 
-      <h2>
-        Nguồn sỉ thời trang QC tại Ninh Hiệp
-      </h2>
+<h2>
+Theo dõi mẫu mới và nguồn sỉ nhanh hơn
+</h2>
 
-      <p>
-        Theo dõi mẫu mới trực tiếp trên website và tham gia đúng nhóm Zalo ngành hàng để cập nhật nhanh hơn mỗi ngày.
-      </p>
+<p>
+Chọn đúng nhóm ngành hàng để cập nhật mẫu mới phù hợp với nhu cầu kinh doanh của bạn.
+</p>
 
-      <div class="cta-buttons">
+<div class="cta-buttons">
 
-        <a class="btn-zalo"
-        target="_blank"
-        href="https://zalo.me/g/dqggnm284">
-          👗 Zalo nữ
-        </a>
+<a class="btn-zalo"
+target="_blank"
+href="https://zalo.me/g/dqggnm284">
+👗 Nhóm nữ
+</a>
 
-        <a class="btn-zalo"
-        target="_blank"
-        href="https://zalo.me/g/kblodi121">
-          👔 Zalo nam
-        </a>
+<a class="btn-zalo"
+target="_blank"
+href="https://zalo.me/g/kblodi121">
+👔 Nhóm nam
+</a>
 
-        <a class="btn-zalo"
-        target="_blank"
-        href="https://zalo.me/g/svctbi087">
-          👜 Zalo phụ kiện
-        </a>
+<a class="btn-zalo"
+target="_blank"
+href="https://zalo.me/g/svctbi087">
+👜 Nhóm phụ kiện
+</a>
 
-      </div>
+<a class="btn-facebook"
+target="_blank"
+href="https://www.facebook.com/profile.php?id=100064044704231">
+📘 Facebook Page
+</a>
 
-    </div>
+</div>
 
-  </div>
+</div>
+
+</div>
 
 </section>
 
@@ -797,69 +987,74 @@
 
 <footer>
 
-  <div class="container footer-grid">
+<div class="container footer-grid">
 
-    <div>
-      <img class="footer-logo"
-      src="assets/logo_cuonghai.jpg">
+<div>
 
-      <h3>Cường Hải Fashion</h3>
+<img class="footer-logo"
+src="assets/logo_cuonghai.jpg">
 
-      <p>
-        Showroom thời trang QC chuyên khách sỉ và reseller.
-      </p>
-    </div>
+<h3>Cường Hải Fashion</h3>
 
-    <div>
-      <h3>Địa chỉ</h3>
+<p>
+Showroom thời trang QC chuyên khách sỉ và reseller tại Ninh Hiệp.
+</p>
 
-      <p>
-        📍 Điếm Kiều, Xóm 6 - Ninh Hiệp
-      </p>
+</div>
 
-      <p>
-        ☎️ 0358 137 668
-      </p>
-    </div>
+<div>
 
-    <div>
-      <h3>Kênh liên hệ</h3>
+<h3>Thông tin</h3>
 
-      <p>
-        <a target="_blank"
-        href="https://www.facebook.com/profile.php?id=100064044704231">
-          Facebook Page
-        </a>
-      </p>
+<p>
+📍 Điếm Kiều, Xóm 6 - Ninh Hiệp
+</p>
 
-      <p>
-        <a target="_blank"
-        href="https://zalo.me/g/dqggnm284">
-          Zalo nữ
-        </a>
-      </p>
+<p>
+☎️ 0358 137 668
+</p>
 
-      <p>
-        <a target="_blank"
-        href="https://zalo.me/g/kblodi121">
-          Zalo nam
-        </a>
-      </p>
+</div>
 
-      <p>
-        <a target="_blank"
-        href="https://zalo.me/g/svctbi087">
-          Zalo phụ kiện
-        </a>
-      </p>
+<div>
 
-    </div>
+<h3>Kênh bán hàng</h3>
 
-  </div>
+<p>
+<a target="_blank"
+href="https://zalo.me/g/dqggnm284">
+Zalo nữ
+</a>
+</p>
 
-  <div class="container copyright">
-    © 2026 Cường Hải Fashion Showroom · Ninh Hiệp
-  </div>
+<p>
+<a target="_blank"
+href="https://zalo.me/g/kblodi121">
+Zalo nam
+</a>
+</p>
+
+<p>
+<a target="_blank"
+href="https://zalo.me/g/svctbi087">
+Zalo phụ kiện
+</a>
+</p>
+
+<p>
+<a target="_blank"
+href="https://www.facebook.com/profile.php?id=100064044704231">
+Facebook Page
+</a>
+</p>
+
+</div>
+
+</div>
+
+<div class="container copyright">
+© 2026 Cường Hải Fashion Showroom · Ninh Hiệp
+</div>
 
 </footer>
 
@@ -868,7 +1063,7 @@
 <a class="floating-zalo"
 target="_blank"
 href="https://zalo.me/g/dqggnm284">
-💬 Vào nhóm Zalo
+💬 Vào Zalo
 </a>
 
 </body>
