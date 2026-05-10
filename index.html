@@ -9,7 +9,7 @@
 <title>Cường Hải | Fashion Wholesale Showroom</title>
 
 <meta name="description"
-content="Showroom thời trang khách sỉ Cường Hải tại Ninh Hiệp - thời trang nữ, nam và phụ kiện QC dành cho shop và reseller.">
+content="Showroom thời trang khách sỉ Cường Hải tại Ninh Hiệp - nguồn hàng Quảng Châu cao cấp dành cho shop và reseller.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -111,43 +111,32 @@ color:#bc8a4f;
 /* ================= HERO ================= */
 
 .hero{
-padding:100px 0 120px;
+padding:90px 0 110px;
 background:
 linear-gradient(
 135deg,
-#f8f5ef 0%,
-#f2ece2 45%,
-#ebe1d3 100%
+#f7f3ed 0%,
+#f2ece2 50%,
+#ebe2d6 100%
 );
-position:relative;
 overflow:hidden;
+position:relative;
 }
 
 .hero::before{
 content:'';
 position:absolute;
-width:700px;
-height:700px;
+width:650px;
+height:650px;
 border-radius:50%;
-background:rgba(183,139,83,.07);
-top:-260px;
-right:-220px;
-}
-
-.hero::after{
-content:'';
-position:absolute;
-width:500px;
-height:500px;
-border-radius:50%;
-background:rgba(255,255,255,.45);
-bottom:-220px;
-left:-120px;
+background:rgba(188,138,79,.08);
+top:-250px;
+right:-180px;
 }
 
 .hero-grid{
 display:grid;
-grid-template-columns:1.02fr .98fr;
+grid-template-columns:1fr 1fr;
 gap:90px;
 align-items:center;
 position:relative;
@@ -158,53 +147,54 @@ z-index:2;
 
 .hero-tag{
 display:inline-flex;
-padding:12px 22px;
+padding:12px 24px;
 border-radius:999px;
-background:#efe3d2;
-color:#ab7d47;
+background:#eee2d1;
+color:#b68146;
 font-size:13px;
 font-weight:800;
-letter-spacing:.6px;
-margin-bottom:34px;
+letter-spacing:.8px;
+margin-bottom:30px;
 }
 
 /* TITLE */
 
 .hero-title{
 font-family:'Cormorant Garamond',serif;
-font-size:118px;
-line-height:.88;
+font-size:104px;
+line-height:.9;
 font-weight:700;
-letter-spacing:-4px;
 color:#111;
-margin-bottom:26px;
-display:flex;
-flex-direction:column;
-}
-
-.hero-title span{
-font-size:58px;
-font-style:italic;
-font-weight:600;
-color:#bc8a4f;
-margin-top:12px;
-letter-spacing:0;
+margin-bottom:10px;
+letter-spacing:-3px;
 }
 
 /* SUBTITLE */
 
-.hero-subtitle{
+.hero-subtitle-main{
+font-family:'Cormorant Garamond',serif;
+font-size:72px;
+line-height:.95;
+font-style:italic;
+font-weight:600;
+color:#bc8a4f;
+margin-bottom:36px;
+letter-spacing:-2px;
+}
+
+/* DESC */
+
+.hero-desc{
 font-size:21px;
-line-height:1.95;
-color:#5e564d;
-max-width:720px;
-margin-bottom:44px;
-font-weight:400;
+line-height:2;
+color:#5f584f;
+max-width:700px;
+margin-bottom:42px;
 }
 
 /* BUTTONS */
 
-.hero-actions{
+.hero-buttons{
 display:flex;
 gap:18px;
 margin-bottom:46px;
@@ -222,12 +212,12 @@ display:flex;
 align-items:center;
 justify-content:center;
 transition:.3s;
-box-shadow:0 10px 26px rgba(0,0,0,.12);
+box-shadow:0 12px 30px rgba(0,0,0,.14);
 }
 
 .btn-dark:hover{
-transform:translateY(-4px);
 background:#bc8a4f;
+transform:translateY(-3px);
 }
 
 .btn-light{
@@ -235,7 +225,7 @@ height:58px;
 padding:0 34px;
 border-radius:999px;
 border:1.5px solid #111;
-background:rgba(255,255,255,.55);
+background:rgba(255,255,255,.65);
 color:#111;
 font-weight:800;
 display:flex;
@@ -249,110 +239,103 @@ background:#111;
 color:white;
 }
 
-/* INFO */
+/* INFO BOX */
 
-.hero-info{
+.hero-boxes{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:18px;
 }
 
-.hero-info-card{
-padding:24px;
-border-radius:26px;
+.hero-box{
+padding:26px;
 background:rgba(255,255,255,.72);
-backdrop-filter:blur(12px);
-border:1px solid rgba(183,139,83,.16);
-box-shadow:0 10px 26px rgba(0,0,0,.04);
+border-radius:28px;
+backdrop-filter:blur(10px);
+box-shadow:0 12px 30px rgba(0,0,0,.04);
+border:1px solid rgba(188,138,79,.12);
 }
 
-.hero-info-card strong{
-display:block;
-font-size:16px;
-margin-bottom:8px;
+.hero-box h4{
+font-size:18px;
+margin-bottom:12px;
+font-weight:800;
 }
 
-.hero-info-card span{
-font-size:14px;
-line-height:1.7;
-color:#6b645c;
+.hero-box p{
+font-size:15px;
+line-height:1.8;
+color:#666058;
 }
 
-/* RIGHT IMAGE */
+/* RIGHT */
 
 .hero-right{
 position:relative;
-min-height:780px;
+min-height:760px;
 }
 
-.main-store-image{
+/* STORE IMAGE */
+
+.store-image{
 position:absolute;
 right:0;
 top:0;
-width:80%;
-height:780px;
-overflow:hidden;
+width:82%;
+height:760px;
 border-radius:44px;
+overflow:hidden;
 box-shadow:
-0 35px 90px rgba(0,0,0,.17);
+0 30px 80px rgba(0,0,0,.15);
 }
 
-.main-store-image img{
+.store-image img{
 width:100%;
 height:100%;
 object-fit:cover;
-}
-
-/* LOGO */
-
-.floating-logo{
-position:absolute;
-right:16px;
-bottom:26px;
-width:180px;
-padding:18px;
-background:rgba(255,255,255,.96);
-border-radius:32px;
-box-shadow:
-0 22px 50px rgba(0,0,0,.15);
-}
-
-.floating-logo img{
-border-radius:20px;
+object-position:center top;
 }
 
 /* SLOGAN */
 
-.floating-slogan-text{
+.slogan-card{
 position:absolute;
 left:-20px;
 bottom:120px;
-padding:34px 38px;
-background:rgba(255,255,255,.92);
-border-radius:34px;
-backdrop-filter:blur(12px);
+padding:36px 42px;
+background:rgba(255,255,255,.95);
+border-radius:36px;
+backdrop-filter:blur(16px);
 box-shadow:
-0 24px 60px rgba(0,0,0,.14);
-border:1px solid rgba(255,255,255,.6);
-max-width:360px;
+0 25px 60px rgba(0,0,0,.14);
+max-width:350px;
 }
 
-.floating-slogan-text h3{
+.slogan-card h3{
 font-family:'Cormorant Garamond',serif;
-font-size:42px;
-line-height:1.1;
+font-size:56px;
+line-height:1;
 font-style:italic;
 font-weight:600;
 color:#111;
-margin-bottom:12px;
 }
 
-.floating-slogan-text p{
-font-size:14px;
-letter-spacing:2px;
-text-transform:uppercase;
-color:#bc8a4f;
-font-weight:700;
+/* LOGO */
+
+.logo-card{
+position:absolute;
+right:20px;
+bottom:22px;
+width:180px;
+padding:18px;
+border-radius:32px;
+background:rgba(255,255,255,.96);
+box-shadow:
+0 20px 50px rgba(0,0,0,.14);
+}
+
+.logo-card img{
+border-radius:22px;
 }
 
 /* ================= CATEGORY ================= */
@@ -558,7 +541,7 @@ font-size:13px;
 color:#888;
 }
 
-/* ================= FLOAT BUTTON ================= */
+/* FLOAT */
 
 .float-zalo{
 position:fixed;
@@ -592,8 +575,8 @@ grid-template-columns:1fr;
 font-size:72px;
 }
 
-.hero-title span{
-font-size:36px;
+.hero-subtitle-main{
+font-size:48px;
 }
 
 .hero-right{
@@ -601,28 +584,24 @@ min-height:auto;
 margin-top:40px;
 }
 
-.main-store-image{
+.store-image{
 position:relative;
 width:100%;
-height:auto;
+height:540px;
 }
 
-.main-store-image img{
-height:520px;
-}
-
-.floating-slogan-text{
+.slogan-card{
 left:10px;
 bottom:90px;
 padding:24px;
-max-width:260px;
+max-width:250px;
 }
 
-.floating-slogan-text h3{
-font-size:28px;
+.slogan-card h3{
+font-size:34px;
 }
 
-.hero-info{
+.hero-boxes{
 grid-template-columns:1fr;
 }
 
@@ -642,20 +621,24 @@ min-height:420px;
 
 @media(max-width:560px){
 
+.hero{
+padding:70px 0 90px;
+}
+
 .hero-title{
 font-size:58px;
 }
 
-.hero-title span{
-font-size:28px;
+.hero-subtitle-main{
+font-size:38px;
 }
 
-.hero-subtitle{
+.hero-desc{
 font-size:18px;
+line-height:1.8;
 }
 
-.hero-actions,
-.contact-buttons{
+.hero-buttons{
 flex-direction:column;
 }
 
@@ -664,7 +647,11 @@ flex-direction:column;
 width:100%;
 }
 
-.floating-logo{
+.store-image{
+height:460px;
+}
+
+.logo-card{
 width:120px;
 }
 
@@ -726,24 +713,32 @@ padding-bottom:80px;
 
 <div class="container hero-grid">
 
+<!-- LEFT -->
+
 <div class="hero-left">
 
 <div class="hero-tag">
-✦ SHOWROOM THỜI TRANG QUẢNG CHÂU - NINH HIỆP
+✦ SHOWROOM THỜI TRANG QUẢNG CHÂU • NINH HIỆP
 </div>
 
 <h1 class="hero-title">
 Cường Hải
-<span>Chuyên sỉ lẻ hàng thời trang Quảng Châu cao cấp - Thiết kế - Đặt mẫu theo yêu cầu </span>
 </h1>
 
-<p class="hero-subtitle">
+<h2 class="hero-subtitle-main">
+Chuyên sỉ lẻ hàng thời trang<br>
+Quảng Châu cao cấp<br>
+Thiết kế • Đặt mẫu theo yêu cầu
+</h2>
+
+<p class="hero-desc">
 Website trưng bày mẫu mới theo từng nhóm ngành hàng.
-Khách xem mẫu trực tiếp trên web và tham gia nhóm Zalo phù hợp
-để cập nhật hàng nhanh hơn mỗi ngày.
+<br><br>
+Khách xem mẫu trực tiếp trên web và tham gia nhóm Zalo
+phù hợp để cập nhật hàng nhanh hơn mỗi ngày.
 </p>
 
-<div class="hero-actions">
+<div class="hero-buttons">
 
 <a href="#showroom" class="btn-dark">
 Xem showroom
@@ -755,49 +750,43 @@ Liên hệ cửa hàng
 
 </div>
 
-<div class="hero-info">
+<div class="hero-boxes">
 
-<div class="hero-info-card">
-<strong>Showroom thực tế</strong>
-<span>Điếm Kiều, Xóm 6 - Ninh Hiệp</span>
+<div class="hero-box">
+<h4>Showroom thực tế</h4>
+<p>Điếm Kiều, Xóm 6 - Ninh Hiệp</p>
 </div>
 
-<div class="hero-info-card">
-<strong>Cập nhật mỗi ngày</strong>
-<span>Mẫu mới liên tục qua Zalo nhóm</span>
+<div class="hero-box">
+<h4>Cập nhật mỗi ngày</h4>
+<p>Mẫu mới liên tục qua Zalo nhóm</p>
 </div>
 
-<div class="hero-info-card">
-<strong>Chuyên khách sỉ</strong>
-<span>Nguồn hàng cho shop & reseller</span>
+<div class="hero-box">
+<h4>Chuyên khách sỉ</h4>
+<p>Nguồn hàng cho shop & reseller</p>
 </div>
 
 </div>
 
 </div>
 
-<!-- HERO RIGHT -->
+<!-- RIGHT -->
 
 <div class="hero-right">
 
-<div class="main-store-image">
+<div class="store-image">
 <img src="assets/anh_cua_hang.jpg">
 </div>
 
-<div class="floating-slogan-text">
-
+<div class="slogan-card">
 <h3>
 Your satisfaction<br>
 is our happiness
 </h3>
-
-<p>
-Fashion wholesale showroom
-</p>
-
 </div>
 
-<div class="floating-logo">
+<div class="logo-card">
 <img src="assets/logo_cuonghai.jpg">
 </div>
 
